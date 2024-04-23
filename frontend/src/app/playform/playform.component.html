@@ -1,0 +1,167 @@
+<section class="play-page-wrapper">
+  <div class="play-form-wrapper">
+    <form class="play-form" [formGroup]="playForm" (ngSubmit)="onSubmit()">
+      <div formGroupName="userData" class="play-form">
+        <label for="username">Username: </label>
+        <input
+          type="text"
+          name="username"
+          formControlName="username"
+          autocomplete="off"
+        />
+        <label for="slogan">Your slogan: </label>
+        <input
+          type="text"
+          name="slogan"
+          formControlName="slogan"
+          class="extra-margin-bottom"
+          autocomplete="off"
+        />
+      </div>
+      <div formGroupName="categories" class="play-form">
+        <label for="firstQuestionCategory">Select first question: </label>
+        <select
+          name="firstQuestionCategory"
+          id="firstQuestionCategory"
+          formControlName="categoryOne"
+          (change)=" updateDoubleCheckArray('categoryOne')"
+         >
+          <option
+            *ngFor="let category of gameService.gameCategories"
+            [value]="category.name"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+        <label for="firstQuestionDifficulty">Select difficulty: </label>
+        <select
+          name="firstQuestionDifficulty"
+          id="firstQuestionDifficulty"
+          class="extra-margin-bottom"
+          formControlName="difficultyOne"
+        >
+          <option
+            *ngFor="let difficulty of gameService.gameDifficulties"
+            [value]="difficulty"
+          >
+            {{ difficulty }}
+          </option>
+        </select>
+        <label for="secondQuestionCategory">Select second question: </label>
+        <select
+          name="secondQuestionCategory"
+          id="secondQuestionCategory"
+          formControlName="categoryTwo"
+          (change)=" updateDoubleCheckArray('categoryTwo')"
+        >
+          <option
+            *ngFor="let category of gameService.gameCategories"
+            [value]="category.name"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+        <label for="secondQuestionDifficulty">Select difficulty: </label>
+        <select
+          name="secondQuestionDifficulty"
+          id="secondQuestionDifficulty"
+          class="extra-margin-bottom"
+          formControlName="difficultyTwo"
+        >
+          <option
+            *ngFor="let difficulty of gameService.gameDifficulties"
+            [value]="difficulty"
+          >
+            {{ difficulty }}
+          </option>
+        </select>
+        <label for="thirdQuestionCategory">Select third question: </label>
+        <select
+          name="thirdQuestionCategory"
+          id="thirdQuestionCategory"
+          formControlName="categoryThree"
+          (change)=" updateDoubleCheckArray('categoryThree')"
+        >
+          <option
+            *ngFor="let category of gameService.gameCategories"
+            [value]="category.name"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+        <label for="thirdQuestionDifficulty">Select difficulty: </label>
+        <select
+          name="thirdQuestionDifficulty"
+          id="thirdQuestionDifficulty"
+          class="extra-margin-bottom"
+          formControlName="difficultyThree"
+        >
+          <option
+            *ngFor="let difficulty of gameService.gameDifficulties"
+            [value]="difficulty"
+          >
+            {{ difficulty }}
+          </option>
+        </select>
+
+        <label for="fourthQuestionCategory">Select fourth question: </label>
+        <select
+          name="fourthQuestionCategory"
+          id="fourthQuestionCategory"
+          formControlName="categoryFour"
+          (change)=" updateDoubleCheckArray('categoryFour')"
+        >
+          <option
+            *ngFor="let category of gameService.gameCategories"
+            [value]="category.name"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+        <label for="fourthQuestionDifficulty">Select difficulty: </label>
+        <select
+          name="fourthQuestionDifficulty"
+          id="fourthQuestionDifficulty"
+          class="extra-margin-bottom"
+          formControlName="difficultyFour"
+        >
+          <option
+            *ngFor="let difficulty of gameService.gameDifficulties"
+            [value]="difficulty"
+          >
+            {{ difficulty }}
+          </option>
+        </select>
+        <label for="fifthQuestionCategory">Select fifth question: </label>
+        <select
+          name="fifthQuestionCategory"
+          id="fifthQuestionCategory"
+          formControlName="categoryFive"
+          (change)=" updateDoubleCheckArray('categoryFive')"
+        >
+          <option
+            *ngFor="let category of gameService.gameCategories"
+            [value]="category.name"
+          >
+            {{ category.name }}
+          </option>
+        </select>
+        <label for="fifthQuestionDifficulty">Select difficulty: </label>
+        <select
+          name="fifthQuestionDifficulty"
+          id="fifthQuestionDifficulty"
+          class="extra-margin-bottom"
+          formControlName="difficultyFive"
+        >
+          <option
+            *ngFor="let difficulty of gameService.gameDifficulties"
+            [value]="difficulty"
+          >
+            {{ difficulty }}
+          </option>
+        </select>
+      </div>
+      <button [disabled]="!playForm.valid">Start Game</button>
+    </form>
+  </div>
+</section>

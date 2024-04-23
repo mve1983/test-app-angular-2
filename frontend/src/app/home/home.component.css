@@ -1,0 +1,58 @@
+span {
+  display: inline-block;
+  margin-bottom: 0.3rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0 1rem;
+}
+
+input {
+  width: 15rem;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+input:focus {
+  box-shadow: 4px 2px 2px var(--box-shadow-dark-1);
+}
+
+label {
+  display: inline-block;
+  min-width: 6rem;
+}
+
+.home-page-wrapper {
+  margin-top: 8rem;
+  display: grid;
+  place-items: center;
+}
+
+.rules-login-wrapper {
+  width: 22rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.switch-btn {
+  background: none;
+  color: var(--color-dark-1);
+  font-size: 1rem;
+  border: none;
+  width: fit-content;
+}
+
+.switch-btn:hover,
+.switch-btn:active {
+  box-shadow: none;
+  border: none;
+  color: var(--color-dark-1);
+  text-decoration: underline;
+}

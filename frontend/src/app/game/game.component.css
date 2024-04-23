@@ -1,0 +1,63 @@
+fieldset {
+  border: 4mm ridge var(--color-dark-1);
+  box-shadow: 4px 2px 2px var(--box-shadow-dark-1);
+  width: 22rem;
+}
+
+legend {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 8rem;
+}
+
+.btn-questions-wrapper {
+  display: grid;
+grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 1rem;
+}
+
+.btn-question-answer {
+  all: unset;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+  border: 2px solid var(--color-dark-1);
+  font-size: 1rem;
+  font-weight: 400;
+  display: grid;
+  place-items: center;
+  border-radius: 0.3rem;
+  padding: 0.5rem 0.3rem;
+  cursor: pointer;
+}
+
+.btn-question-answer:hover,
+.btn-question-answer:active {
+  background-color: var(--color-light-1);
+  color: var(--color-dark-1);
+  box-shadow: 4px 2px 2px var(--box-shadow-dark-1);
+}
+
+.results-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 22rem;
+  margin-bottom: 3rem;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-bottom: 1.5rem;
+  
+}
+

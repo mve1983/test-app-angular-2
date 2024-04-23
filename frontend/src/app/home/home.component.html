@@ -1,0 +1,59 @@
+<section class="home-page-wrapper">
+  <h2>Welcome to Quiz Game!</h2>
+  <div class="rules-login-wrapper">
+    <form
+      *ngIf="isLoginMode; else isRegisterMode"
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <label for="email">E-Mail:</label>
+      <input type="email" name="email" formControlName="email" />
+      <label for="password">Password:</label>
+      <input type="password" name="password" formControlName="password" />
+      <button>Login</button>
+    </form>
+    <ng-template #isRegisterMode>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <label for="email">E-Mail:</label>
+        <input type="email" name="email" formControlName="email" />
+        <label for="username">Username</label>
+        <input type="text" name="username" formControlName="username" />
+        <label for="password">Password:</label>
+        <input type="password" name="password" formControlName="password" />
+        <button>Register</button>
+      </form>
+    </ng-template>
+    <button type="button" class="switch-btn" (click)="changeLoginRegister()">
+      Switch Login/Register
+    </button>
+    <h4>Rules:</h4>
+    <div>
+      <span
+        >1. Enter a Username (mandatory, but can be different from your login
+        name, just overwrite)</span
+      >
+      <br />
+      <span
+        >2. Enter a slogan (not mandatory, will be shown in leaderboard)</span
+      >
+      <br />
+      <span
+        >3. Select 5 categories and difficulties (mandatory, no double
+        category)</span
+      >
+      <br />
+      <span
+        >4. Answer the questions by clicking the correct answer (multiple
+        choice)</span
+      >
+      <br />
+      <span>5. Score:</span>
+      <ul>
+        <li>Wrong answer - 0 points</li>
+        <li>Correct answer easy - 2 points</li>
+        <li>Correct answer medium - 4 points</li>
+        <li>Correct answer hard - 6 points</li>
+      </ul>
+    </div>
+  </div>
+</section>

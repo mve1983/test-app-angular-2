@@ -1,0 +1,81 @@
+/* You can add global styles to this file, and also import other style files */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-light-1: #f5efe6;
+  --color-dark-1: #064652;
+
+  --box-shadow-dark-1: rgba(6, 70, 82, 0.5);
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-light-1);
+  color: var(--color-dark-1);
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+
+button {
+  all: unset;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+  border: 2px solid var(--color-dark-1);
+  cursor: pointer;
+  padding: .5rem 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+}
+
+button:hover,
+button:active {
+  background-color: var(--color-light-1);
+  color: var(--color-dark-1);
+  box-shadow: 4px 2px 2px var(--box-shadow-dark-1);
+}
+
+button:disabled {
+  background-color: var(--box-shadow-dark-1);
+  color: var(--color-light-1);
+  border: none;
+  box-shadow: none;
+}
+
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-italic {
+  font-style: italic;
+}
+
+.spinner {
+  border: 1rem solid var(--color-dark-1);
+  border-top: 1rem solid var(--color-light-1);
+  border-radius: 50%;
+  width: 8rem;
+  height: 8rem;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+

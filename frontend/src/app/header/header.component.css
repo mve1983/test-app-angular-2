@@ -1,0 +1,40 @@
+header {
+  display: grid;
+  place-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 6rem;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+  z-index: 100;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  all: unset;
+}
+
+a {
+  cursor: pointer;
+  border-radius: .3rem;
+  padding: .3rem;
+}
+
+.active {
+  background-color: var(--color-light-1);
+  color: var(--color-dark-1);
+
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}

@@ -1,0 +1,68 @@
+<section class="game-wrapper">
+  <div
+    *ngIf="!gameService.question().question && questionCount < 6"
+    class="spinner"
+  ></div>
+  <fieldset *ngIf="questionCount < 6 && gameService.question().question">
+    <legend>Question: {{ questionCount }}</legend>
+    <p [innerHtml]="gameService.question().question">
+      {{ gameService.question().question }}
+    </p>
+    <div class="btn-questions-wrapper">
+      <button
+        type="button"
+        class="btn-question-answer"
+        [innerHtml]="gameService.question().possibleAnswers[0]"
+        (click)="giveAnswer(gameService.question().possibleAnswers[0])"
+      ></button>
+      <button
+        type="button"
+        class="btn-question-answer"
+        [innerHtml]="gameService.question().possibleAnswers[1]"
+        (click)="giveAnswer(gameService.question().possibleAnswers[1])"
+      ></button>
+      <button
+        type="button"
+        class="btn-question-answer"
+        [innerHtml]="gameService.question().possibleAnswers[2]"
+        (click)="giveAnswer(gameService.question().possibleAnswers[2])"
+      ></button>
+      <button
+        type="button"
+        class="btn-question-answer"
+        [innerHtml]="gameService.question().possibleAnswers[3]"
+        (click)="giveAnswer(gameService.question().possibleAnswers[3])"
+      ></button>
+    </div>
+  </fieldset>
+  <div *ngIf="questionCount > 5" class="results-wrapper">
+    <h2>Your results:</h2>
+    <div *ngFor="let result of gameService.gameScore" class="result">
+      <div>
+        <span class="text-underline">Question:</span>
+        <span
+          [innerHtml]="result.question"
+          class="text-italic padding-left-1"
+        ></span>
+      </div>
+      <div>
+        <span class="text-underline">Your answer:</span>
+        <span [innerHtml]="result.yourAnswer" class="text-italic"></span>
+      </div>
+      <div>
+        <span class="text-underline">Correct answer:</span>
+        <span [innerHtml]="result.correctAnswer" class="text-italic"></span>
+      </div>
+      <div>
+        <span class="text-underline">Difficulty:</span>
+        <span [innerHtml]="result.difficulty" class="text-italic"></span>
+      </div>
+      <div>
+        <span class="text-underline">Your points:</span>
+        <span [innerHtml]="result.yourPoints" class="text-italic"></span>
+      </div>
+    </div>
+    <h3>Your total points: {{ totalPoints() }}</h3>
+    
+  </div>
+</section>

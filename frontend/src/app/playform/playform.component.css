@@ -1,0 +1,68 @@
+input,
+select {
+  width: 15rem;
+  outline: none;
+  border: none;
+  border-radius: 0.3rem;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+  padding: 0.3rem;
+  margin: 0.3rem 0;
+  font-family: "Titillium Web", sans-serif;
+}
+
+option {
+  font-family: "Titillium Web", sans-serif;
+}
+
+input:focus,
+select:focus {
+  box-shadow: 4px 2px 2px var(--box-shadow-dark-1);
+}
+
+.play-page-wrapper {
+  margin-top: 8rem;
+}
+
+.play-form-wrapper {
+  display: grid;
+  place-items: center;
+}
+
+.play-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+/* .btn-start {
+  all: unset;
+  background-color: var(--color-dark-1);
+  color: var(--color-light-1);
+  border: 2px solid var(--color-dark-1);
+  cursor: pointer;
+  padding: 1rem 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 0.3rem;
+}
+
+.btn-start:hover,
+.btn-start:active {
+  background-color: var(--color-light-1);
+  color: var(--color-dark-1);
+  box-shadow: 4px 2px 2px var(--box-shadow-dark-1);
+}
+
+.btn-start:disabled {
+  background-color: var(--box-shadow-dark-1);
+  color: var(--color-light-1);
+  border: none;
+  box-shadow: none;
+} */
+
+.extra-margin-bottom {
+  margin-bottom: 1.5rem;
+}
+
